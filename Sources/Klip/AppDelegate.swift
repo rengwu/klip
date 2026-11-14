@@ -117,9 +117,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Menus
 
     private func installStatusItem() {
-        let image = NSImage(systemSymbolName: "clipboard", accessibilityDescription: "Klip")
-        image?.isTemplate = true
-        statusItem.button?.image = image
+        statusItem.button?.image = StatusIcon.image()
+        statusItem.button?.setAccessibilityLabel("Klip")
         statusItem.isVisible = config.showMenuBarIcon
         let menu = NSMenu()
         menu.addItem(withTitle: "Show Klip", action: #selector(showPanel), keyEquivalent: "").target = self

@@ -78,10 +78,22 @@ Tested on macOS 27.0 (arm64), Swift 6.4.2, against an isolated `KLIP_HOME`.
 - Recording a new shortcut, launch at login, hiding the menu bar icon, Clear History
 - Appearance in light mode, and on a second display
 
+## Icon
+
+The user chose the clipboard pal from [four directions](journal/2026-11-15-grill-10db2c85deb2f154ccc00ce2e9b27e8b.md) and asked for a menu bar outline of the clipboard character alone, without the squircle.
+
+- `Resources/AppIcon.svg` is the artwork. `Resources/make-icon.sh` renders it with a headless Chromium-based browser and builds `Resources/AppIcon.icns`, which is committed so `build.sh` needs no renderer.
+- `Sources/Klip/StatusIcon.swift` draws the menu bar glyph in code as a template image.
+
+![The app icon](attachments/2026-11-15-app-icon.png)
+
+![The menu bar glyph, enlarged and at 18 and 36 pt, on light and dark](attachments/2026-11-15-menu-bar-glyph.png)
+
+Checked: the `.icns` renders as shown, the glyph renders as shown, and the built bundle contains the icon. The glyph in the real menu bar and the icon in Finder have not been looked at by the agent. The app icon is the chosen sketch unchanged; no refinement round has been run.
+
 ## Limits
 
 - The build is ad-hoc signed. An ad-hoc signature is identified by its code hash, so at first every rebuild orphaned the Accessibility grant: System Settings still listed Klip as allowed while the new build was refused. `build.sh` now signs with the designated requirement `identifier "local.klip"` so the grant should follow the bundle identifier across rebuilds. That it survives a rebuild is not yet confirmed. A stale entry is cleared with `tccutil reset Accessibility local.klip`.
-- There is no app icon yet.
 - History is stored unencrypted.
 - A file reference is a path; it goes stale if the file moves.
 - Images are written back as PNG only.

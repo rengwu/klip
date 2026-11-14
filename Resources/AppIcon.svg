@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<!-- Klip app icon. The artwork sits in the 824 pt macOS icon box, inset 100 pt in a transparent canvas. -->
+<g transform="translate(100 100)">
+<defs><clipPath id="pal-box"><rect width="824" height="824" rx="185"/></clipPath>
+<linearGradient id="pal-sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
+
+<linearGradient id="pal-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA070"/><stop offset="1" stop-color="#EE4B2B"/></linearGradient>
+<linearGradient id="pal-board" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFE3D6"/></linearGradient>
+<linearGradient id="pal-clip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6A45"/><stop offset="1" stop-color="#C8321A"/></linearGradient>
+<filter id="pal-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="34" stdDeviation="30" flood-color="#9C2408" flood-opacity=".45"/></filter>
+<filter id="pal-soft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#8A1E06" flood-opacity=".35"/></filter></defs>
+<g clip-path="url(#pal-box)">
+<rect width="824" height="824" fill="url(#pal-bg)"/>
+<ellipse cx="412" cy="120" rx="520" ry="260" fill="#fff" opacity=".10"/>
+<g transform="rotate(-9 412 430)">
+ <rect x="212" y="196" width="400" height="490" rx="96" fill="url(#pal-board)" filter="url(#pal-shadow)"/>
+ <rect x="212" y="196" width="400" height="490" rx="96" fill="none" stroke="#fff" stroke-width="8" opacity=".9"/>
+ <path d="M240 600 Q412 720 584 600 V590 Q584 686 488 686 H336 Q240 686 240 590Z" fill="#F7B8A0" opacity=".45"/>
+ <rect x="302" y="140" width="220" height="128" rx="60" fill="url(#pal-clip)" filter="url(#pal-soft)"/>
+ <rect x="318" y="150" width="188" height="44" rx="22" fill="#fff" opacity=".28"/>
+ <circle cx="412" cy="204" r="26" fill="#FFE3D6"/>
+ <rect x="296" y="372" width="78" height="30" rx="15" fill="#E8482A"/>
+ <rect x="450" y="372" width="78" height="30" rx="15" fill="#E8482A"/>
+ <path d="M318 482 Q412 572 506 482" fill="none" stroke="#E8482A" stroke-width="34" stroke-linecap="round"/>
+</g>
+<rect width="824" height="824" rx="185" fill="none" stroke="url(#pal-sheen)" stroke-width="6"/></g></g>
+</svg>

@@ -13,6 +13,7 @@ A simple clipboard manager for macOS, built in native Swift and AppKit. Version 
 - [Round 1 submitted answers](journal/2026-11-15-grill-7d3869271726245c7ebb9033e751b70f.md)
 - [Round 2 submitted answers: panel and Settings designs](journal/2026-11-15-grill-fa5df67048705dd811815a067848e180.md)
 - [Round 3 submitted answers: last details and go-ahead](journal/2026-11-15-grill-258f485c35ac2e1fd80af1bd43633e2a.md)
+- [Icon direction submitted answers](journal/2026-11-15-grill-10db2c85deb2f154ccc00ce2e9b27e8b.md)
 
 ## Project workflow
 

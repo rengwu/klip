@@ -21,7 +21,9 @@ for architecture in arm64 x86_64; do
 done
 
 rm -rf "$app"
-mkdir -p "$app/Contents/MacOS"
+mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
+# Prebuilt so a build needs no SVG renderer; see Resources/make-icon.sh.
+cp "$root/Resources/AppIcon.icns" "$app/Contents/Resources/AppIcon.icns"
 lipo -create "$slices/arm64" "$slices/x86_64" -output "$app/Contents/MacOS/Klip"
 
 cat >"$app/Contents/Info.plist" <<PLIST
@@ -34,6 +36,9 @@ cat >"$app/Contents/Info.plist" <<PLIST
   <key>CFBundleIdentifier</key>      <string>local.klip</string>
   <key>CFBundleExecutable</key>      <string>Klip</string>
   <key>CFBundlePackageType</key>     <string>APPL</string>
+  <!-- LSUIElement hides the Dock icon, but Finder, Get Info and alerts still show this one. -->
+  <key>CFBundleIconFile</key>        <string>AppIcon</string>
+  <key>CFBundleIconName</key>        <string>AppIcon</string>
   <key>CFBundleShortVersionString</key> <string>$version</string>
   <key>CFBundleVersion</key>        <string>$version</string>
   <key>LSMinimumSystemVersion</key>  <string>13.0</string>
