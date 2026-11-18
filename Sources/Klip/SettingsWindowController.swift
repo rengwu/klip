@@ -125,6 +125,9 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         row("", checkbox("Show key hints in panel", config.showKeyHints) { [unowned app] on in
             app.update { $0.showKeyHints = on }
         })
+        row("", checkbox("Show image previews", config.showImagePreview) { [unowned app] on in
+            app.update { $0.showImagePreview = on }
+        })
         rule()
 
         let hours = AppConfig.retentionChoices

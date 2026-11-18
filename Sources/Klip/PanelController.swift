@@ -92,6 +92,7 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
     private var exhausted = false
     private var pinnedOnly = false
     private let thumbnails = NSCache<NSURL, NSImage>()
+    private let preview = ImagePreview()
 
     init(app: AppDelegate) {
         self.app = app
@@ -212,10 +213,23 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
         }
         panel.makeKeyAndOrderFront(nil)
         panel.makeFirstResponder(search)
+        updatePreview()  // the first row was selected before the panel had its position
     }
 
     func close() {
+        preview.hide()
         panel.orderOut(nil)
+    }
+
+    /// Shows the highlighted row's image beside the panel, or hides the preview.
+    private func updatePreview() {
+        let row = table.selectedRow
+        if app.config.showImagePreview, panel.isVisible, items.indices.contains(row),
+            let url = items[row].imageURL {
+            preview.show(url, beside: panel)
+        } else {
+            preview.hide()
+        }
     }
 
     func windowDidResignKey(_ notification: Notification) {
@@ -273,6 +287,7 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
     }
 
     private func select(_ row: Int) {
+        defer { updatePreview() }
         guard !items.isEmpty else { return }
         let row = min(max(row, 0), items.count - 1)
         table.selectRowIndexes([row], byExtendingSelection: false)

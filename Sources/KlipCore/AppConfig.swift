@@ -26,6 +26,7 @@ public struct AppConfig: Codable, Equatable {
     public var skipConcealed = true
     public var showMenuBarIcon = true
     public var showKeyHints = true
+    public var showImagePreview = true
     public var hotKey = HotKey.standard
 
     public init() {}
@@ -43,6 +44,7 @@ public struct AppConfig: Codable, Equatable {
         skipConcealed = try c.decodeIfPresent(Bool.self, forKey: .skipConcealed) ?? d.skipConcealed
         showMenuBarIcon = try c.decodeIfPresent(Bool.self, forKey: .showMenuBarIcon) ?? d.showMenuBarIcon
         showKeyHints = try c.decodeIfPresent(Bool.self, forKey: .showKeyHints) ?? d.showKeyHints
+        showImagePreview = try c.decodeIfPresent(Bool.self, forKey: .showImagePreview) ?? d.showImagePreview
         hotKey = try c.decodeIfPresent(HotKey.self, forKey: .hotKey) ?? d.hotKey
     }
 

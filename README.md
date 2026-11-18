@@ -16,6 +16,7 @@ Native Swift and AppKit. Lives in the menu bar.
 
 - Keeps text, rich text, images and file references
 - **⇧⌘V** opens a searchable panel; **Return** pastes into the app you were in
+- Highlighting an image shows a larger preview beside the panel
 - **⌘1–⌘9** paste directly, **⌘P** pins, **⇧⌘P** shows pinned only, **⌘⌫** deletes
 - History decays after 7 days (up to 30) and is capped at 500 MB; both are configurable
 - Skips copies that password managers mark as concealed

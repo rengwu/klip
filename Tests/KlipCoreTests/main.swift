@@ -172,6 +172,7 @@ do {
     var config = AppConfig()
     config.retentionHours = 24
     config.keepFormatting = false
+    config.showImagePreview = false
     config.hotKey = HotKey(keyCode: 8, modifiers: 0x0800, display: "⌥C")
     try config.save(to: url)
     t.checkEqual(AppConfig.load(from: url), config, "settings round-trip")
@@ -181,6 +182,7 @@ do {
     t.checkEqual(partial.retentionHours, 720, "decay is capped at 30 days")
     t.checkEqual(partial.showKeyHints, false, "present keys are read")
     t.checkEqual(partial.maxBytes, 500_000_000, "missing keys take defaults")
+    t.checkEqual(partial.showImagePreview, true, "image previews default to on")
 
     try Data("not json".utf8).write(to: url)
     t.checkEqual(AppConfig.load(from: url), AppConfig(), "a corrupt file yields defaults")
