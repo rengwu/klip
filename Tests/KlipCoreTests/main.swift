@@ -171,6 +171,7 @@ do {
 
     var config = AppConfig()
     config.retentionHours = 24
+    config.pasteOnSelect = false
     config.keepFormatting = false
     config.showImagePreview = false
     config.hotKey = HotKey(keyCode: 8, modifiers: 0x0800, display: "⌥C")
@@ -182,6 +183,7 @@ do {
     t.checkEqual(partial.retentionHours, 720, "decay is capped at 30 days")
     t.checkEqual(partial.showKeyHints, false, "present keys are read")
     t.checkEqual(partial.maxBytes, 500_000_000, "missing keys take defaults")
+    t.checkEqual(partial.pasteOnSelect, true, "older settings keep automatic paste enabled")
     t.checkEqual(partial.showImagePreview, true, "image previews default to on")
 
     try Data("not json".utf8).write(to: url)

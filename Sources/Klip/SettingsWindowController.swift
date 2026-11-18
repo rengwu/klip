@@ -111,6 +111,12 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         shortcut.hotKey = config.hotKey
         shortcut.onChange = { [unowned app] in app.setHotKey($0) }
         row("Show panel:", shortcut)
+        row("When selecting an item:", popup(
+            ["Paste into active app", "Copy to clipboard"], selected: config.pasteOnSelect ? 0 : 1
+        ) { [unowned self] index in
+            app.update { $0.pasteOnSelect = index == 0 }
+            rebuild()
+        })
 
         let login = checkbox("Launch at login", LaunchAtLogin.isEnabled) { [weak self] on in
             do { try LaunchAtLogin.setEnabled(on) } catch { self?.present(error) }
@@ -158,7 +164,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         })
         row("", button("Clear History…") { [unowned self] in confirmClear() })
 
-        if !Clipboard.canPaste {
+        if config.pasteOnSelect && !Clipboard.canPaste {
             rule()
             row("Paste into apps:", NSTextField(labelWithString: "Not allowed"),
                 button("Open Accessibility Settings…") {

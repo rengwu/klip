@@ -243,15 +243,16 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
         reload(select: table.selectedRow)
     }
 
+    private var shouldPasteOnSelect: Bool { app.config.pasteOnSelect && Clipboard.canPaste }
+
     private func applySettings() {
         let hints = app.config.showKeyHints
         footer.isHidden = !hints
         footerRule.isHidden = !hints
         listBottom[0].isActive = hints
         listBottom[1].isActive = !hints
-        // Return only copies until the Accessibility permission lets Klip paste.
         footer.stringValue = [
-            Clipboard.canPaste ? "↩ Paste" : "↩ Copy", "⌘P Pin", "⇧⌘P Pinned only", "⌘⌫ Delete",
+            shouldPasteOnSelect ? "↩ Paste" : "↩ Copy", "⌘P Pin", "⇧⌘P Pinned only", "⌘⌫ Delete",
         ].joined(separator: "     ")
         search.placeholderString = pinnedOnly ? "Search pinned" : "Search"
     }
@@ -351,7 +352,7 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
 
     // MARK: Actions
 
-    private func paste(_ row: Int) {
+    private func chooseItem(_ row: Int) {
         guard items.indices.contains(row) else { return }
         let id = items[row].id
         var content: ItemContent?
@@ -362,7 +363,7 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
         guard let content else { return }
         app.copy(content)
         close()
-        guard Clipboard.canPaste else { return }
+        guard shouldPasteOnSelect else { return }
         // Give the previous app's window a moment to take the keyboard back.
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) { Clipboard.sendPaste() }
     }
@@ -382,7 +383,7 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
     }
 
     @objc private func clicked() {
-        paste(table.clickedRow)
+        chooseItem(table.clickedRow)
     }
 
     func controlTextDidChange(_ notification: Notification) {
@@ -394,7 +395,7 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
         switch selector {
         case #selector(NSResponder.moveDown(_:)): select(table.selectedRow + 1)
         case #selector(NSResponder.moveUp(_:)): select(table.selectedRow - 1)
-        case #selector(NSResponder.insertNewline(_:)): paste(table.selectedRow)
+        case #selector(NSResponder.insertNewline(_:)): chooseItem(table.selectedRow)
         case #selector(NSResponder.cancelOperation(_:)): close()
         default: return false
         }
@@ -421,7 +422,7 @@ final class PanelController: NSObject, NSTableViewDataSource, NSTableViewDelegat
             close()
             app.openSettings()
         } else if let digit = Int(character), (1...9).contains(digit) {
-            paste(digit - 1)
+            chooseItem(digit - 1)
         } else {
             return false
         }

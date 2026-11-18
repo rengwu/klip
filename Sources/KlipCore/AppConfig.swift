@@ -22,6 +22,7 @@ public struct AppConfig: Codable, Equatable {
 
     public var retentionHours = 168
     public var maxBytes: Int64 = 500_000_000
+    public var pasteOnSelect = true
     public var keepFormatting = true
     public var skipConcealed = true
     public var showMenuBarIcon = true
@@ -40,6 +41,7 @@ public struct AppConfig: Codable, Equatable {
         let hours = try c.decodeIfPresent(Int.self, forKey: .retentionHours) ?? d.retentionHours
         retentionHours = min(max(hours, 1), 720)
         maxBytes = max(try c.decodeIfPresent(Int64.self, forKey: .maxBytes) ?? d.maxBytes, 1_000_000)
+        pasteOnSelect = try c.decodeIfPresent(Bool.self, forKey: .pasteOnSelect) ?? d.pasteOnSelect
         keepFormatting = try c.decodeIfPresent(Bool.self, forKey: .keepFormatting) ?? d.keepFormatting
         skipConcealed = try c.decodeIfPresent(Bool.self, forKey: .skipConcealed) ?? d.skipConcealed
         showMenuBarIcon = try c.decodeIfPresent(Bool.self, forKey: .showMenuBarIcon) ?? d.showMenuBarIcon
