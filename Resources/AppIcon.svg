@@ -1,27 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 <!-- Klip app icon. The artwork sits in the 824 pt macOS icon box, inset 100 pt in a transparent canvas. -->
+<defs>
+<path id="k-sq" d="M824.0 540.0 L823.9 575.7 L823.6 594.4 L823.2 609.5 L822.5 622.7 L821.7 634.6 L820.7 645.5 L819.5 655.6 L818.1 665.2 L816.5 674.2 L814.8 682.8 L812.8 690.9 L810.7 698.7 L808.4 706.1 L805.9 713.2 L803.2 720.0 L800.3 726.6 L797.2 732.9 L793.9 738.9 L790.5 744.7 L786.8 750.2 L783.0 755.5 L778.9 760.6 L774.7 765.5 L770.2 770.2 L765.5 774.7 L760.6 778.9 L755.5 783.0 L750.2 786.8 L744.7 790.5 L738.9 793.9 L732.9 797.2 L726.6 800.3 L720.0 803.2 L713.2 805.9 L706.1 808.4 L698.7 810.7 L690.9 812.8 L682.8 814.8 L674.2 816.5 L665.2 818.1 L655.6 819.5 L645.5 820.7 L634.6 821.7 L622.7 822.5 L609.5 823.2 L594.4 823.6 L575.7 823.9 L540.0 824.0 L284.0 824.0 L248.3 823.9 L229.6 823.6 L214.5 823.2 L201.3 822.5 L189.4 821.7 L178.5 820.7 L168.4 819.5 L158.8 818.1 L149.8 816.5 L141.2 814.8 L133.1 812.8 L125.3 810.7 L117.9 808.4 L110.8 805.9 L104.0 803.2 L97.4 800.3 L91.1 797.2 L85.1 793.9 L79.3 790.5 L73.8 786.8 L68.5 783.0 L63.4 778.9 L58.5 774.7 L53.8 770.2 L49.3 765.5 L45.1 760.6 L41.0 755.5 L37.2 750.2 L33.5 744.7 L30.1 738.9 L26.8 732.9 L23.7 726.6 L20.8 720.0 L18.1 713.2 L15.6 706.1 L13.3 698.7 L11.2 690.9 L9.2 682.8 L7.5 674.2 L5.9 665.2 L4.5 655.6 L3.3 645.5 L2.3 634.6 L1.5 622.7 L0.8 609.5 L0.4 594.4 L0.1 575.7 L0.0 540.0 L0.0 284.0 L0.1 248.3 L0.4 229.6 L0.8 214.5 L1.5 201.3 L2.3 189.4 L3.3 178.5 L4.5 168.4 L5.9 158.8 L7.5 149.8 L9.2 141.2 L11.2 133.1 L13.3 125.3 L15.6 117.9 L18.1 110.8 L20.8 104.0 L23.7 97.4 L26.8 91.1 L30.1 85.1 L33.5 79.3 L37.2 73.8 L41.0 68.5 L45.1 63.4 L49.3 58.5 L53.8 53.8 L58.5 49.3 L63.4 45.1 L68.5 41.0 L73.8 37.2 L79.3 33.5 L85.1 30.1 L91.1 26.8 L97.4 23.7 L104.0 20.8 L110.8 18.1 L117.9 15.6 L125.3 13.3 L133.1 11.2 L141.2 9.2 L149.8 7.5 L158.8 5.9 L168.4 4.5 L178.5 3.3 L189.4 2.3 L201.3 1.5 L214.5 0.8 L229.6 0.4 L248.3 0.1 L284.0 0.0 L540.0 0.0 L575.7 0.1 L594.4 0.4 L609.5 0.8 L622.7 1.5 L634.6 2.3 L645.5 3.3 L655.6 4.5 L665.2 5.9 L674.2 7.5 L682.8 9.2 L690.9 11.2 L698.7 13.3 L706.1 15.6 L713.2 18.1 L720.0 20.8 L726.6 23.7 L732.9 26.8 L738.9 30.1 L744.7 33.5 L750.2 37.2 L755.5 41.0 L760.6 45.1 L765.5 49.3 L770.2 53.8 L774.7 58.5 L778.9 63.4 L783.0 68.5 L786.8 73.8 L790.5 79.3 L793.9 85.1 L797.2 91.1 L800.3 97.4 L803.2 104.0 L805.9 110.8 L808.4 117.9 L810.7 125.3 L812.8 133.1 L814.8 141.2 L816.5 149.8 L818.1 158.8 L819.5 168.4 L820.7 178.5 L821.7 189.4 L822.5 201.3 L823.2 214.5 L823.6 229.6 L823.9 248.3 L824.0 284.0Z"/>
+<clipPath id="k-box"><use href="#k-sq"/></clipPath>
+<path id="k-clip-shape" d="M350 152 A62 62 0 0 1 474 152 C474 170 480 176 498 176 H518 A20 20 0 0 1 538 196 V232 A24 24 0 0 1 514 256 H310 A24 24 0 0 1 286 232 V196 A20 20 0 0 1 306 176 H326 C344 176 350 170 350 152 Z M412 126 a22 22 0 1 0 0.01 0 Z" fill-rule="evenodd"/>
+<clipPath id="k-clip-in"><use href="#k-clip-shape" clip-rule="evenodd"/></clipPath>
+<linearGradient id="k-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA070"/><stop offset="1" stop-color="#EE4B2B"/></linearGradient>
+<radialGradient id="k-glow" cx=".5" cy="0" r=".75"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="k-rim" x1="0" y1="0" x2="0" y2="1">
+ <stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset=".22" stop-color="#fff" stop-opacity="0"/>
+ <stop offset=".82" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".1"/>
+</linearGradient>
+<linearGradient id="k-board" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFEDE4"/></linearGradient>
+<linearGradient id="k-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6B49A"/><stop offset="1" stop-color="#E98B6B"/></linearGradient>
+<linearGradient id="k-clip" gradientUnits="userSpaceOnUse" x1="0" y1="90" x2="0" y2="262">
+ <stop offset="0" stop-color="#FF8A5E"/><stop offset=".45" stop-color="#F25A33"/><stop offset="1" stop-color="#C9361B"/>
+</linearGradient>
+<linearGradient id="k-clip-lip" gradientUnits="userSpaceOnUse" x1="0" y1="90" x2="0" y2="262">
+ <stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/>
+ <stop offset=".8" stop-color="#7A1A06" stop-opacity="0"/><stop offset="1" stop-color="#7A1A06" stop-opacity=".45"/>
+</linearGradient>
+<linearGradient id="k-ink-sel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9542C"/><stop offset="1" stop-color="#D2401F"/></linearGradient>
+<filter id="k-drop" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#000" flood-opacity=".28"/></filter>
+<filter id="k-shadow" filterUnits="userSpaceOnUse" x="-1000" y="-1000" width="3000" height="3000"><feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#9C2408" flood-opacity=".42"/></filter>
+<filter id="k-soft" filterUnits="userSpaceOnUse" x="-1000" y="-1000" width="3000" height="3000">
+ <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#7A1A06" flood-opacity=".35" result="contact"/>
+ <feDropShadow in="contact" dx="0" dy="12" stdDeviation="11" flood-color="#8A1E06" flood-opacity=".28"/>
+</filter>
+</defs>
 <g transform="translate(100 100)">
-<defs><clipPath id="pal-box"><rect width="824" height="824" rx="185"/></clipPath>
-<linearGradient id="pal-sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
-
-<linearGradient id="pal-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA070"/><stop offset="1" stop-color="#EE4B2B"/></linearGradient>
-<linearGradient id="pal-board" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFE3D6"/></linearGradient>
-<linearGradient id="pal-clip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6A45"/><stop offset="1" stop-color="#C8321A"/></linearGradient>
-<filter id="pal-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="34" stdDeviation="30" flood-color="#9C2408" flood-opacity=".45"/></filter>
-<filter id="pal-soft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#8A1E06" flood-opacity=".35"/></filter></defs>
-<g clip-path="url(#pal-box)">
-<rect width="824" height="824" fill="url(#pal-bg)"/>
-<ellipse cx="412" cy="120" rx="520" ry="260" fill="#fff" opacity=".10"/>
+<use href="#k-sq" fill="url(#k-bg)" filter="url(#k-drop)"/>
+<g clip-path="url(#k-box)">
+<rect width="824" height="824" fill="url(#k-glow)"/>
 <g transform="rotate(-9 412 430)">
- <rect x="212" y="196" width="400" height="490" rx="96" fill="url(#pal-board)" filter="url(#pal-shadow)"/>
- <rect x="212" y="196" width="400" height="490" rx="96" fill="none" stroke="#fff" stroke-width="8" opacity=".9"/>
- <path d="M240 600 Q412 720 584 600 V590 Q584 686 488 686 H336 Q240 686 240 590Z" fill="#F7B8A0" opacity=".45"/>
- <rect x="302" y="140" width="220" height="128" rx="60" fill="url(#pal-clip)" filter="url(#pal-soft)"/>
- <rect x="318" y="150" width="188" height="44" rx="22" fill="#fff" opacity=".28"/>
- <circle cx="412" cy="204" r="26" fill="#FFE3D6"/>
- <rect x="296" y="372" width="78" height="30" rx="15" fill="#E8482A"/>
- <rect x="450" y="372" width="78" height="30" rx="15" fill="#E8482A"/>
- <path d="M318 482 Q412 572 506 482" fill="none" stroke="#E8482A" stroke-width="34" stroke-linecap="round"/>
+ <g filter="url(#k-shadow)">
+  <rect x="212" y="212" width="400" height="490" rx="84" fill="url(#k-edge)"/>
+  <rect x="212" y="196" width="400" height="490" rx="84" fill="url(#k-board)"/>
+ </g>
+ <rect x="215" y="199" width="394" height="484" rx="81" fill="none" stroke="#fff" stroke-width="6"/>
+ <rect x="262" y="330" width="84" height="26" rx="13.0" fill="#F5C3AE"/>
+ <rect x="360" y="330" width="122" height="26" rx="13.0" fill="#F5C3AE"/>
+ <rect x="496" y="330" width="64" height="26" rx="13.0" fill="#F5C3AE"/>
+ <rect x="262" y="470" width="62" height="26" rx="13.0" fill="#F5C3AE"/>
+ <rect x="338" y="470" width="134" height="26" rx="13.0" fill="#F5C3AE"/>
+ <rect x="486" y="470" width="72" height="26" rx="13.0" fill="#F5C3AE"/>
+ <rect x="262" y="540" width="116" height="26" rx="13.0" fill="#F5C3AE"/>
+ <rect x="392" y="540" width="54" height="26" rx="13.0" fill="#F5C3AE"/>
+ <rect x="262" y="400" width="104" height="26" rx="13.0" fill="url(#k-ink-sel)"/>
+ <rect x="380" y="400" width="70" height="26" rx="13.0" fill="url(#k-ink-sel)"/>
+ <rect x="464" y="400" width="76" height="26" rx="13.0" fill="url(#k-ink-sel)"/>
+ <use href="#k-clip-shape" fill="url(#k-clip)" filter="url(#k-soft)"/>
+ <g clip-path="url(#k-clip-in)">
+  <use href="#k-clip-shape" fill="none" stroke="url(#k-clip-lip)" stroke-width="10"/>
+  <path d="M390 148 A22 22 0 0 1 434 148 A22 19 0 0 0 390 148 Z" fill="#A42C12" opacity=".55"/>
+ </g>
 </g>
-<rect width="824" height="824" rx="185" fill="none" stroke="url(#pal-sheen)" stroke-width="6"/></g></g>
+<use href="#k-sq" fill="none" stroke="url(#k-rim)" stroke-width="16"/>
+</g>
+</g>
 </svg>

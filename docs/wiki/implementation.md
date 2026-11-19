@@ -1,6 +1,6 @@
 ---
 title: Implementation and validation
-updated: 2026-11-15
+updated: 2026-11-19
 order: 2
 ---
 
@@ -80,16 +80,38 @@ Tested on macOS 27.0 (arm64), Swift 6.4.2, against an isolated `KLIP_HOME`.
 
 ## Icon
 
-The user chose the clipboard pal from [four directions](journal/2026-11-15-grill-10db2c85deb2f154ccc00ce2e9b27e8b.md) and asked for a menu bar outline of the clipboard character alone, without the squircle.
+The first icon was a clipboard character with a face, chosen from [four directions](journal/2026-11-15-grill-10db2c85deb2f154ccc00ce2e9b27e8b.md). The menu bar outline matched it, without the squircle. On 2026-11-19 the user asked for a logo with no eyes and no personified characters. After trying other directions, they had the current icon refined instead and approved it over [three review rounds](journal/2026-11-19-grill-icon-redesign.md).
+
+What the refined icon keeps:
+
+- the orange squircle
+- the white board
+- the orange clip
+- the slight tilt
+
+What it changes:
+
+- Four lines of text, broken into words, replace the face. The second line is set in Klip's orange, with nothing behind it.
+- The clip is one silhouette: a plate gripping the board's top edge rises through curved corners into an arched tab. The hole in the tab shows the background, and the clip's highlight follows its outline.
+- The outline uses Apple's icon shape: straight sides with continuous corners.
+- A light rim runs around the edge, and the board shows its edge, so it looks thick.
+
+The menu bar glyph matches: the same tilted board outline, the icon's clip silhouette with its hole, and three lines of text getting shorter.
 
 - `Resources/AppIcon.svg` is the artwork. `Resources/make-icon.sh` renders it with a headless Chromium-based browser and builds `Resources/AppIcon.icns`, which is committed so `build.sh` needs no renderer.
 - `Sources/Klip/StatusIcon.swift` draws the menu bar glyph in code as a template image.
 
-![The app icon](attachments/2026-11-15-app-icon.png)
+![The app icon](attachments/2026-11-19-app-icon.png)
 
-![The menu bar glyph, enlarged and at 18 and 36 pt, on light and dark](attachments/2026-11-15-menu-bar-glyph.png)
+![The menu bar glyph, enlarged and at 18 and 36 pt, on light and dark](attachments/2026-11-19-menu-bar-glyph.png)
 
-Checked: the `.icns` renders as shown, the glyph renders as shown, and the built bundle contains the icon. The glyph in the real menu bar and the icon in Finder have not been looked at by the agent. The app icon is the chosen sketch unchanged; no refinement round has been run.
+Checked:
+
+- The `.icns` renders as approved and still reads at 16 px.
+- The glyph drawn by `StatusIcon.swift` matches the approved preview at the same size.
+- The built bundle contains the new `.icns`.
+
+Not yet looked at by the agent: the glyph in the real menu bar and the icon in Finder. Finder may show the old icon until its icon cache refreshes.
 
 ## Limits
 

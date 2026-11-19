@@ -1,6 +1,6 @@
 ---
 title: Klip
-updated: 2026-11-15
+updated: 2026-11-19
 order: 0
 ---
 
@@ -14,6 +14,7 @@ A simple clipboard manager for macOS, built in native Swift and AppKit. Version 
 - [Round 2 submitted answers: panel and Settings designs](journal/2026-11-15-grill-fa5df67048705dd811815a067848e180.md)
 - [Round 3 submitted answers: last details and go-ahead](journal/2026-11-15-grill-258f485c35ac2e1fd80af1bd43633e2a.md)
 - [Icon direction submitted answers](journal/2026-11-15-grill-10db2c85deb2f154ccc00ce2e9b27e8b.md)
+- [Icon redesign rounds](journal/2026-11-19-grill-icon-redesign.md)
 
 ## Project workflow
 
