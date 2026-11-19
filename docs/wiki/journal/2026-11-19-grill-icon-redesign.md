@@ -38,4 +38,22 @@ The icon and menu bar glyph before the refinement:
 
 ![The previous menu bar glyph](../attachments/2026-11-15-menu-bar-glyph.png)
 
+The round-8 icon shipped in 0.3.0:
+
+![The 0.3.0 app icon, orange](../attachments/2026-11-19-app-icon.png)
+
+## Monochrome
+
+Afterwards, the user shared a screenshot of the website (`klip-site`), with the orange icon above the headline, and asked: “lets do a visual grill, make the logo monochrome”.
+
+| Round | Fungi session | Question | Answer |
+| --- | --- | --- | --- |
+| 9 | `25ea3b40e6353dc835bfaf7b5d926eb7` | Which monochrome version: A · Graphite, B · Silver, C · Line or D · Clear? | D · Clear |
+| 9 | | Where should it replace the orange one? | App icon and README, plus files for the website: “basically everywhere, make this the new definitive logo. no more orange.” |
+| 9 | | Apply now? | Show me the final version first |
+| 10 | `bf8d0782b09119a09563ab19c4823901` | Is this the final logo? It has a solid clip, a softer glow, and no banding | Apply it everywhere |
+| 10 | | Make the site's orange Download button white? | Yes |
+
+![Round 9's four monochrome versions: Graphite, Silver, Line and Clear](../attachments/2026-11-19-monochrome-options.png)
+
 The outcome is in [implementation and validation](../implementation.md#icon).

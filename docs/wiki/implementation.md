@@ -80,36 +80,38 @@ Tested on macOS 27.0 (arm64), Swift 6.4.2, against an isolated `KLIP_HOME`.
 
 ## Icon
 
-The first icon was a clipboard character with a face, chosen from [four directions](journal/2026-11-15-grill-10db2c85deb2f154ccc00ce2e9b27e8b.md). The menu bar outline matched it, without the squircle. On 2026-11-19 the user asked for a logo with no eyes and no personified characters. After trying other directions, they had the current icon refined instead and approved it over [three review rounds](journal/2026-11-19-grill-icon-redesign.md).
+The first icon was a clipboard character with a face, chosen from [four directions](journal/2026-11-15-grill-10db2c85deb2f154ccc00ce2e9b27e8b.md). On 2026-11-19 the user asked for a logo with no eyes and no personified characters. The [redesign rounds](journal/2026-11-19-grill-icon-redesign.md) went through two stages:
 
-What the refined icon keeps:
+1. The face was refined away, and the result shipped in orange in 0.3.0.
+2. The user then chose a monochrome version as the definitive logo: “make this the new definitive logo. no more orange.”
 
-- the orange squircle
-- the white board
-- the orange clip
-- the slight tilt
+The logo is the Clear version:
 
-What it changes:
+- **Tile:** a dark graphite squircle in Apple's icon shape, with straight sides, continuous corners, a light rim and a soft glow at the top.
+- **Board:** frosted glass, tilted slightly, with a visible edge so it looks thick.
+- **Clip:** solid white. A plate grips the board's top edge and rises through curved corners into an arched tab. The hole in the tab shows the tile behind.
+- **Text:** four lines in translucent white, broken into words. The second line is solid white, marking the selected item.
 
-- Four lines of text, broken into words, replace the face. The second line is set in Klip's orange, with nothing behind it.
-- The clip is one silhouette: a plate gripping the board's top edge rises through curved corners into an arched tab. The hole in the tab shows the background, and the clip's highlight follows its outline.
-- The outline uses Apple's icon shape: straight sides with continuous corners.
-- A light rim runs around the edge, and the board shows its edge, so it looks thick.
+The menu bar glyph is a template image, so it was already monochrome. It matches the logo: the tilted board outline, the clip silhouette with its hole, and three lines of text getting shorter.
 
-The menu bar glyph matches: the same tilted board outline, the icon's clip silhouette with its hole, and three lines of text getting shorter.
+The SVG filters are set to `color-interpolation-filters="sRGB"`. In the default linearRGB, 8-bit precision runs out in dark greys, and the drop shadow turned the tile's gradient into visible steps.
+
+The website is a separate project, `klip-site`. It uses a 256 px export of this icon as its logo and favicon, and its Download button is off-white (`#f6f6f5`) instead of orange.
 
 - `Resources/AppIcon.svg` is the artwork. `Resources/make-icon.sh` renders it with a headless Chromium-based browser and builds `Resources/AppIcon.icns`, which is committed so `build.sh` needs no renderer.
 - `Sources/Klip/StatusIcon.swift` draws the menu bar glyph in code as a template image.
 
-![The app icon](attachments/2026-11-19-app-icon.png)
+![The app icon](attachments/2026-11-19-app-icon-monochrome.png)
 
 ![The menu bar glyph, enlarged and at 18 and 36 pt, on light and dark](attachments/2026-11-19-menu-bar-glyph.png)
 
 Checked:
 
 - The `.icns` renders as approved and still reads at 16 px.
+- The tile's gradient has no steps; this was measured row by row.
 - The glyph drawn by `StatusIcon.swift` matches the approved preview at the same size.
 - The built bundle contains the new `.icns`.
+- The site, rendered locally, shows the new logo and the white button.
 
 Not yet looked at by the agent: the glyph in the real menu bar and the icon in Finder. Finder may show the old icon until its icon cache refreshes.
 
